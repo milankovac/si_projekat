@@ -1,11 +1,10 @@
 const express = require('express')
 const app = express();
-
-
-app.get('',(require, response)=>{
-    response.send('Index')
+const port = process.env.PORT || 3000;
+app.get('/',(require, response)=>{
+    response.send('Index Page')
 });
 
-app.listen(3000, () =>{
+app.listen(port, () =>{
     console.log('Server is up on port 3000.')
 })
