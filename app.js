@@ -1,13 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const userRouter = require('./routes/user')
+const plotRouter = require('./routes/plot')
 const app = express();
 const port = process.env.PORT || 3000;
-
 require('./config/db')
 
 app.use(bodyParser.json());
-app.use(userRouter)
+app.use(userRouter);
+app.use(plotRouter);
+
 app.get('/',(require, response)=>{
     response.send('Index Page')
 });

@@ -5,18 +5,21 @@ const User = require('./userModel')
 
 module.exports = class UserController{
 
+    // #Add new user
     static async addUser(body){
         const user = userFactory(body)
         await user.save()
         return user;
     }
 
+    // #Get user by id
     static async getUser(id){
         const userService = new UserService();
         const user = await userService.getById(id);
         return user;
     }
 
+    // #Edit user
     static async editUser(request){
         const body = request.body;
         const userService = new UserService();

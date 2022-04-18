@@ -4,7 +4,7 @@ const UserController = require('../user/userController');
 const router = new express.Router()
 
 // #Add user
-router.post('/user/add', async (request, response) => {
+router.post('/user', async (request, response) => {
     try {
         const user = await UserController.addUser(request.body);
         response.status(201).send(user)

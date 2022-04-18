@@ -15,10 +15,6 @@ const User = mongose.model('User', {
         type: String,
         required: true
     },
-    password: {
-        type: String,
-        required: true
-    },
     image: {
         type: String
     }
