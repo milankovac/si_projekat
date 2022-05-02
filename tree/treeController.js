@@ -16,7 +16,7 @@ module.exports = class TreeController{
     }
 
     // #Get tree by ID
-    static getTreeByID(id){
+    static async getTreeByID(id){
         return await treeService.getTreeByID(id)
     }
 }
