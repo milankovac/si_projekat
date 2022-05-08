@@ -5,6 +5,7 @@ const plotRouter = require('./routes/plot')
 const treeRouter = require('./routes/tree')
 const supplementationRouter = require('./routes/supplementation')
 const yieldRouter = require('./routes/yield');
+const careRouter = require('./routes/care');
 const app = express();
 const port = process.env.PORT || 3000;
 require('./config/db')
@@ -15,6 +16,7 @@ app.use(plotRouter);
 app.use(treeRouter);
 app.use(supplementationRouter);
 app.use(yieldRouter);
+app.use(careRouter);
 
 app.get('/',(require, response)=>{
     response.send('Index Page')
