@@ -9,6 +9,7 @@ const careRouter = require('./routes/care');
 const wateringRouter = require('./routes/watering');
 const tillageRouter = require('./routes/tillage');
 const app = express();
+const cors = require('cors');
 const port = process.env.PORT || 3000;
 require('./config/db')
 
@@ -21,7 +22,7 @@ app.use(yieldRouter);
 app.use(careRouter);
 app.use(wateringRouter);
 app.use(tillageRouter);
-
+app.use(cors())
 app.get('/',(require, response)=>{
     response.send('Index Page')
 });
