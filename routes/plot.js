@@ -33,4 +33,14 @@ router.get('/plot/:id', async (request, response) => {
     }
 });
 
+// #Delete plot by id
+router.delete('/plot/:id', async (request, response) => {
+    try {
+        const deleted = await PlotController.deletePlot(request.params.id)
+        response.status(201).send(deleted)
+    } catch (e) {
+        response.status(400).send(e)
+    }
+});
+
 module.exports = router;
