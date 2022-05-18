@@ -23,4 +23,10 @@ module.exports = class TillageController {
         const tillage = await tillageService.getByPlotId(id);
         return tillage;
     }
+
+    // #Get tillage by plot  id
+    static async deleteTillage(id) {
+        const tillageService = new TillageService();
+        return await tillageService.deleteTillage(id);
+    }
 }

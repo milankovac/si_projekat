@@ -34,4 +34,15 @@ router.get('/tillage/plot/:id', async (request, response) => {
 
 })
 
+// #Delete tillage byID
+router.delete('/tillage/:id', async (request, response) => {
+    try {
+        const deleted = await TillageController.deleteTillage(request.params.id)
+        response.status(201).send(deleted)
+    } catch (e) {
+        response.status(400).send(e)
+    }
+
+})
+
 module.exports = router
