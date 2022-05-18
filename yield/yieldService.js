@@ -1,4 +1,5 @@
 const Yield = require('../yield/yieldModel')
+const mongoose = require('mongoose');
 module.exports = class YieldService {
 
     async getByPlotId(id) {
@@ -9,6 +10,11 @@ module.exports = class YieldService {
     async getById(id){
         const yieldd = await Yield.findOne({id: id});
         return yieldd;
+    }
+
+    async deleteYield(id){
+        const objetId = mongoose.Types.ObjectId(id.trim());
+        return await Yield.deleteOne({_id:objetId})
     }
 
 }

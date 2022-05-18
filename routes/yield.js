@@ -32,6 +32,14 @@ router.get('/yield/:id', async (request, response) => {
         response.status(400).send(e)
     }
 });
-
+// #Delete yield by id
+router.delete('/yield/:id', async (request, response) => {
+    try {
+        const deleted = await YieldController.deleteYield(request.params.id)
+        response.status(201).send(deleted)
+    } catch (e) {
+        response.status(400).send(e)
+    }
+});
 
 module.exports = router;

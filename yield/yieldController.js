@@ -21,4 +21,10 @@ module.exports = class YieldController {
         const yieldService = new YieldService();
         return await yieldService.getById(id);
     }
+
+    // #Delete yield by id
+    static async deleteYield(id) {
+        const yieldService = new YieldService();
+        return await yieldService.deleteYield(id);
+    }
 }
