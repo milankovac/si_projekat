@@ -23,4 +23,11 @@ module.exports = class WateringController {
         const watering = await wateringService.getByPlotId(id);
         return watering;
     }
+
+    // #Delete watering by plot  id
+    static async deleteWatering(id) {
+        const wateringService = new WateringService();
+        return await wateringService.deleteWatering(id);
+    }
+
 }

@@ -34,4 +34,15 @@ router.get('/watering/plot/:id', async (request, response) => {
 
 })
 
+// #Delete watering by plot  ID
+router.delete('/watering/:id', async (request, response) => {
+    try {
+        const deleted = await WateringController.deleteWatering(request.params.id)
+        response.status(201).send(deleted)
+    } catch (e) {
+        response.status(400).send(e)
+    }
+
+})
+
 module.exports = router
