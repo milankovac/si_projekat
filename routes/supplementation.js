@@ -35,5 +35,15 @@ router.get('/supplementation/user/:id', async (request, response) => {
     }
 });
 
+// #Delete supplementation by id
+router.delete('/supplementation/:id', async (request, response) => {
+    try {
+        const deleted = await SupplementationController.deleteSupplementation(request.params.id)
+        response.status(201).send(deleted)
+    } catch (e) {
+        response.status(400).send(e)
+    }
+});
+
 
 module.exports = router;
