@@ -36,4 +36,14 @@ router.get('/tree/:id', async (request, response) => {
     }
 });
 
+// #Delete tree by id
+router.delete('/tree/:id', async (request, response) => {
+    try {
+        const deleted = await TreeController.deleteTree(request.params.id)
+        response.status(201).send(deleted)
+    } catch (e) {
+        response.status(400).send(e)
+    }
+});
+
 module.exports = router;
