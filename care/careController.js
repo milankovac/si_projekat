@@ -23,4 +23,10 @@ module.exports = class CareController {
         const care = await careService.getByPlotId(id);
         return care;
     }
+
+    // #Delete care by   id
+    static async deleteCare(id) {
+        const careService = new CareService();
+        return await careService.deleteCare(id);;
+    }
 }

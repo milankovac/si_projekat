@@ -34,4 +34,15 @@ router.get('/care/plot/:id', async (request, response) => {
 
 })
 
+// #Delete care by  ID
+router.delete('/care/:id', async (request, response) => {
+    try {
+        const deleted = await CareController.deleteCare(request.params.id)
+        response.status(201).send(deleted)
+    } catch (e) {
+        response.status(400).send(e)
+    }
+
+})
+
 module.exports = router
