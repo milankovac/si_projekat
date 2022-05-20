@@ -2,7 +2,7 @@
 const userFactory = require('../user/userFactory')
 const UserService = require('../user/userService')
 const User = require('./userModel')
-
+const mongoose = require('mongoose');
 module.exports = class UserController{
 
     // #Add new user
@@ -24,6 +24,7 @@ module.exports = class UserController{
         const body = request.body;
         const userService = new UserService();
         const user = await userService.getById(request.params.id);
+        const objetId = mongoose.Types.ObjectId(user.id.trim())
         const updatedUser = {
             'firebaseId': user.firebaseId,
             'firstName': body.firstName ?? user.firstName,
@@ -31,7 +32,7 @@ module.exports = class UserController{
             'email': body.email ?? user.email,
             'image': body.image ?? user.image
         };
-        await User.updateOne({firebaseId:request.params.id}, updatedUser)
+        await User.findByIdAndUpdate({_id:objetId}, updatedUser)
         return updatedUser
     }
 }

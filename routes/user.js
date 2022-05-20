@@ -29,6 +29,7 @@ router.patch('/user/:id', async (request, response) => {
         const user = await UserController.editUser(request)
         response.status(201).send(user)
     } catch (e) {
+        console.log(e);
         response.status(400).send(e)
     }
 

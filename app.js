@@ -14,6 +14,8 @@ const port = process.env.PORT || 3000;
 require('./config/db')
 
 app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
