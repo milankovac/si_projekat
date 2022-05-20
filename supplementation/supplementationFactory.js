@@ -8,7 +8,8 @@ module.exports = function (data) {
                 plotId: data.plotId,
                 date: data.date,
                 type: data.type,
-                comment: data.comment
+                comment: data.comment,
+                amount: data.amount
             }
         );
 }

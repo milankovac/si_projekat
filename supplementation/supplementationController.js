@@ -19,6 +19,13 @@ module.exports = class SupplementationController {
         return supplementation;
     }
 
+    // #Get sumplemation  by plot id
+    static async getSupplementationByPlot(id) {
+        const supplementationService = new SupplementationService();
+        const supplementation = await supplementationService.getByPlotId(id);
+        return supplementation;
+    }
+
     // #Delete sumplemation  by  id
     static async deleteSupplementation(id) {
         const supplementationService = new SupplementationService();
