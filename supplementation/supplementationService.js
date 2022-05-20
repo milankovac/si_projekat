@@ -8,7 +8,7 @@ module.exports = class SupplementationService {
     }
 
     async getByPlotId(id) {
-        const supplementation = await Supplementation.findOne({plotId: id.trim()})
+        const supplementation = await Supplementation.find({plotId: id.trim()})
         return supplementation;
     }
 
