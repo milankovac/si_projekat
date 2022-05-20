@@ -20,6 +20,9 @@ const Yield = mongose.model('Yield', {
     },
     expense: {
         type: String
-    }
+    },
+    comment: {
+        type: String
+    },
 });
 module.exports = Yield;

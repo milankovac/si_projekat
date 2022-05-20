@@ -9,7 +9,8 @@ module.exports = function (data) {
                 date: data.date,
                 amount: data.amount,
                 income: data.income,
-                expense: data.expense
+                expense: data.expense,
+                comment: data.comment
             }
         );
 }
