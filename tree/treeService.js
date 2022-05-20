@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 module.exports = class treeService {
 
     static async allTreesByPlot(id) {
-        return await Tree.find({ 'plotId': id })
+        return await Tree.find({ 'plotId': id.trim() })
     }
 
     static async getTreeByID(id){
-        return await Tree.findById(id)
+        return await Tree.findById(id.trim())
     }
 
     static async deleteTree(id){

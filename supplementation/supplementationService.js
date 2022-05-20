@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 module.exports = class SupplementationService {
 
     async getByUserId(id) {
-        const supplementation = await Supplementation.findOne({userId: id})
+        const supplementation = await Supplementation.findOne({userId: id.trim()})
         return supplementation;
     }
 
     async getByPlotId(id) {
-        const supplementation = await Supplementation.findOne({plotId: id})
+        const supplementation = await Supplementation.findOne({plotId: id.trim()})
         return supplementation;
     }
 

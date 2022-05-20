@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 module.exports = class WateringService {
 
     async getById(id) {
-        const watering = await Watering.findOne({id: id})
+        const watering = await Watering.findOne({id: id.trim()})
         return watering;
     }
 
     async getByPlotId(id) {
-        const watering = await Watering.find({plotId: id})
+        const watering = await Watering.find({plotId: id.trim()})
         return watering;
     }
 

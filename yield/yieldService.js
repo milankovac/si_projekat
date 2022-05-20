@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 module.exports = class YieldService {
 
     async getByPlotId(id) {
-        const yields = await Yield.find({plotId: id})
+        const yields = await Yield.find({plotId: id.trim()})
         return yields;
     }
 
     async getById(id){
-        const yieldd = await Yield.findOne({id: id});
+        const yieldd = await Yield.findOne({id: id.trim()});
         return yieldd;
     }
 

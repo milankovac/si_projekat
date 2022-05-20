@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 module.exports = class TillagegService {
 
     async getById(id) {
-        const tillage = await Tillage.findOne({id: id})
+        const tillage = await Tillage.findOne({id: id.trim()})
         return tillage;
     }
 
     async getByPlotId(id) {
-        const tillage = await Tillage.find({plotId: id})
+        const tillage = await Tillage.find({plotId: id.trim()})
         return tillage;
     }
 
